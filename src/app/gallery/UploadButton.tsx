@@ -1,17 +1,21 @@
-"use client"
+'use client';
 import React from 'react';
 import { CldUploadButton } from 'next-cloudinary';
 import { Button } from '@/components/ui/button';
-
-
+import { useRouter } from 'next/navigation';
 
 const UploadButton = () => {
+  const router = useRouter();
   return (
     <Button asChild>
       <div className='flex gap-2'>
         <CldUploadButton
           uploadPreset='dr1wsf6c'
-          onUpload={(result: any) => {}}
+          onUpload={() => {
+            setTimeout(() => {
+              router.refresh();
+            }, 1000);
+          }}
         />
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -30,6 +34,6 @@ const UploadButton = () => {
       </div>
     </Button>
   );
-}
+};
 
-export default UploadButton
+export default UploadButton;

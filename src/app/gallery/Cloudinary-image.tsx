@@ -10,7 +10,7 @@ const CloudinaryImage = ({src}: Props) => {
   return (
     <CldImage
       width='300'
-      height='600'
+      height='300'
       src={src}
       sizes='100vw'
       alt='Description of my image'
